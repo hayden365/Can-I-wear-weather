@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
-type Tweather = {
-	lat: string;
-	lon: string;
+interface Iweather {
+	lat: number;
+	lon: number;
 	timezone: string;
-};
+}

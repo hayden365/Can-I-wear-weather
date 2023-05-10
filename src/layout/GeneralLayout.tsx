@@ -1,14 +1,20 @@
 import Header from "../components/Header/Header";
+import styled from "styled-components";
 
 type Props = {
 	children: React.ReactNode;
 };
 
+const Main = styled.main`
+	max-width: 1240px;
+	margin: auto;
+`;
+
 export const GeneralLayout = ({ children }: Props) => {
 	return (
-		<div className="general-layout">
+		<>
 			<Header />
-			<div className="general-layout__body flexColCenter">{children}</div>
-		</div>
+			<Main>{children}</Main>
+		</>
 	);
 };

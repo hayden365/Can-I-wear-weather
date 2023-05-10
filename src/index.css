@@ -1,7 +1,7 @@
 /* @import url(sanitize.css); */
 
 :root {
-	--primary: rgba(75, 141, 33, 0.78);
+	--primary: #3598b8;
 	--secondary: rgba(255, 255, 255, 0.78);
 	--black: #131110;
 	--green-gradient: linear-gradient(97.05deg, #397d39 3.76%, #085c08 100%);
@@ -29,72 +29,6 @@ a:hover,
 a:active {
 	text-decoration: none;
 	color: inherit;
-}
-
-.paddings {
-	padding: 1.5rem;
-}
-
-.innerWidth {
-	width: 100%;
-}
-
-.flexCenter {
-	display: flex;
-	row-gap: 2rem;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-.flexStart {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.flexEnd {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-.flexColCenter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-.flexColStart {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-}
-
-.flexColEnd {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-}
-
-.primaryText {
-	color: rgba(75, 141, 33, 0.78);
-	font-weight: bold;
-	font-size: 2rem;
-}
-
-.secondaryText {
-	color: rgb(140 139 139);
-	font-size: 0.9rem;
-}
-
-.orangeText {
-	color: orange;
-	font-size: 1.5rem;
-	font-weight: 600;
 }
 
 .button {
