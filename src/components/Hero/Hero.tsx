@@ -4,12 +4,12 @@ type Props = {};
 
 const Hero = (props: Props) => {
 	return (
-		<section className="hero-wrapper">
-			<div className="paddings innerWidth flexCenter hero-container">
-				<div className="hero-left"></div>
+		<section>
+			<div>
+				<div></div>
 
-				<div className="flexCenter hero-right">
-					<div className="image-container"></div>
+				<div>
+					<div></div>
 				</div>
 			</div>
 		</section>

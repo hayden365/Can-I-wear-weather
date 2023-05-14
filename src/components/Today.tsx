@@ -31,7 +31,12 @@ const RightWrapper = styled.div`
 
 const RightComponent = styled.div``;
 
-export default function Today() {
+interface Props {
+	data: any;
+}
+
+export default function Today({ data }: Props) {
+	console.log(data);
 	return (
 		<Wrapper>
 			<LeftWrapper>

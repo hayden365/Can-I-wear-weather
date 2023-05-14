@@ -1,31 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { getWeather } from "../api/weather";
 import Today from "../components/Today";
+import { useQuery } from "react-query";
 
 type Props = {};
 
 const Home = (props: Props) => {
-	// navigator.geolocation.getCurrentPosition(positionSuccess);
+	const [coords, setCoords] = useState({ latitude: 0, longitude: 0 });
+	useEffect(() => {
+		const successCallback: PositionCallback = location => {
+			setCoords(location.coords);
+		};
+		const errorCallback: PositionErrorCallback = error => {
+			console.error("Error getting geolocation:", error);
+		};
 
-	// function positionSuccess({ coords }: GeolocationPosition) {
-	// 	getWeather(
-	// 		coords.latitude,
-	// 		coords.longitude,
-	// 		Intl.DateTimeFormat().resolvedOptions().timeZone,
-	// 	)
-	// 		.then(renderWeather)
-	// 		.catch(e => {
-	// 			console.log(e);
-	// 			alert("error getting weather.");
-	// 		});
-	// }
-	// function renderWeather({ current, daily, hourly }) {
-	// 	renderCurrentWeather(current);
-	// }
+		const options = {
+			enableHighAccuracy: true,
+			timeout: 5000,
+			maximumAge: 0,
+		};
+		navigator.geolocation.getCurrentPosition(
+			successCallback,
+			errorCallback,
+			options,
+		);
+	}, []);
+
+	const { data, isLoading, error } = useQuery("weatherData", () =>
+		getWeather(
+			coords.latitude,
+			coords.longitude,
+			Intl.DateTimeFormat().resolvedOptions().timeZone,
+		),
+	);
 
 	return (
 		<>
-			<Today />
+			<Today data={data} />
 		</>
 	);
 };

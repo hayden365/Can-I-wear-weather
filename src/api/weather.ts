@@ -17,9 +17,8 @@ export function getWeather(lat: number, lon: number, timezone: string) {
 			},
 		)
 		.then(({ data }) => {
-			console.log(data);
 			return {
-				// current: parseCurrentWeather(data),
+				data,
 			};
 		});
 }

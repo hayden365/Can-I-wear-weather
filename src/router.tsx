@@ -15,7 +15,7 @@ export const routers = createBrowserRouter(
 	routerData.map(router => {
 		return {
 			path: router.path,
-			element: <GeneralLayout>{router.element} </GeneralLayout>,
+			element: <GeneralLayout>{router.element}</GeneralLayout>,
 		};
 	}),
 );
